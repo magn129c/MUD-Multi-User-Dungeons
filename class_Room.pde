@@ -5,7 +5,16 @@ class Room {
   ArrayList<Item> items;
   ArrayList<NPC> NPCs;
   
+  Room(String description) {
+    this.description = description;
+  }
+  
+  void addExit(String direction, Room roomBehindDoor) {
+    exits.put(direction, roomBehindDoor);
+  }
+  
   Room getExit(String direction) {
+    return exits.get(direction);
   }
   
   void addItem(Item item) {
