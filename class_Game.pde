@@ -8,7 +8,7 @@ class Game {
     player = new Player("Hero");
     command = new Command();
 
-    // Rum, NPCer og Items genereret af min goat ChatGPT
+    // Rum, NPCer og Items genereret af min goat ChatGPT (og r1 og r2 af ChrisBruhn på GitHub (https://github.com/ChrisBruhn/MUD))
     fileLoader("gameData.txt", this);
   }
 

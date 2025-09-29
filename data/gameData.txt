@@ -4,6 +4,12 @@ ROOM: r3|You are inside an old wooden tavern, the smell of ale fills the air.
 ROOM: r4|You are at the edge of a deep forest, tall trees surround you.
 ROOM: r5|You are standing on a stone bridge over a rushing river.
 ROOM: r6|You are in an abandoned watchtower, dust covers everything.
+ROOM: r7|You are in a dusty library, shelves filled with ancient books.
+ROOM: r8|You are in a quiet graveyard, the air feels heavy.
+ROOM: r9|You are inside a blacksmith’s forge, the heat is intense.
+ROOM: r10|You are on a narrow mountain path, the wind howls around you.
+ROOM: r11|You are in a ruined temple, moss covers the broken statues.
+ROOM: r12|You are in a crystal cave, glowing crystals light up the walls.
 
 EXIT: r1|north|r2
 EXIT: r2|south|r1
@@ -15,6 +21,16 @@ EXIT: r4|east|r5
 EXIT: r5|west|r4
 EXIT: r5|up|r6
 EXIT: r6|down|r5
+EXIT: r6|up|r7
+EXIT: r7|down|r6
+EXIT: r7|east|r8
+EXIT: r8|west|r7
+EXIT: r9|south|r2
+EXIT: r2|northwest|r9
+EXIT: r10|east|r11
+EXIT: r11|west|r10
+EXIT: r11|down|r12
+EXIT: r12|up|r11
 
 ITEM: sword|Sword|A sharp blade.|Increase attack|r1
 ITEM: hammer|Hammer|Really heavy.|Decrease attack|r2
@@ -22,9 +38,21 @@ ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health|r3
 ITEM: bow|Bow|A sturdy wooden bow.|Increase ranged attack|r4
 ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase defense|r6
 ITEM: coin|Gold Coin|A shiny coin with the king’s face.|No effect|r5
+ITEM: scroll|Ancient Scroll|A brittle scroll written in a forgotten language.|Unlock secret|r7
+ITEM: lantern|Lantern|An old lantern that still works.|Light source|r8
+ITEM: shield|Iron Shield|A heavy shield with dents from battle.|Increase defense|r9
+ITEM: boots|Traveler’s Boots|Worn leather boots that feel very light.|Increase speed|r10
+ITEM: relic|Sacred Relic|A golden relic with mystical power.|Increase health|r11
+ITEM: crystal|Crystal Shard|A glowing shard humming with energy.|Increase magic|r12
 
 NPC: goblin|Goblin|30|5|10|r1
 NPC: innkeeper|Innkeeper|50|2|0|r3
 NPC: wolf|Wolf|40|7|20|r4
 NPC: bandit|Bandit|60|10|30|r5
 NPC: ghost|Ghost|25|8|50|r6
+NPC: librarian|Ghostly Librarian|20|3|15|r7
+NPC: skeleton|Skeleton|35|6|25|r8
+NPC: blacksmith|Blacksmith|70|8|0|r9
+NPC: eagle|Giant Eagle|50|12|35|r10
+NPC: cultist|Dark Cultist|55|9|40|r11
+NPC: crystalbeast|Crystal Beast|80|14|60|r12
