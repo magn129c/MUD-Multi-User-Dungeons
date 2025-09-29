@@ -28,18 +28,28 @@ class Command {
           println("Item: " + it.name + " - " + it.description);
         }
       }
-    } else if (input.contains("north") && game.player.currentRoom.exits.containsKey("north")) {
-      game.player.setLocation(game.player.currentRoom.exits.get("north"));
-      println("You moved north to: " + game.player.currentRoom.description);
-    } else if (input.contains("south") && game.player.currentRoom.exits.containsKey("south")) {
-      game.player.setLocation(game.player.currentRoom.exits.get("south"));
-      println("You moved south to: " + game.player.currentRoom.description);
-    } else if (input.contains("west") && game.player.currentRoom.exits.containsKey("north")) {
-      game.player.setLocation(game.player.currentRoom.exits.get("west"));
-      println("You moved west to: " + game.player.currentRoom.description);
-    } else if (input.contains("east") && game.player.currentRoom.exits.containsKey("south")) {
-      game.player.setLocation(game.player.currentRoom.exits.get("east"));
-      println("You moved east to: " + game.player.currentRoom.description);
+    } else if (input.contains("exits")) {
+      if (game.player.currentRoom.exits.size() > 0) {
+        println("Exits:");
+        for (String direction : game.player.currentRoom.exits.keySet()) {
+          Room destination = game.player.currentRoom.exits.get(direction);
+          println(" - " + direction + " -> " + destination.description);
+        }
+      } else {
+        println("There are no exits from here.");
+      }
+    } else if (input.contains("north")) {
+      moveCheck("north", game);
+    } else if (input.contains("south")) {
+      moveCheck("south", game);
+    } else if (input.contains("west")) {
+      moveCheck("west", game);
+    } else if (input.contains("east")) {
+      moveCheck("east", game);
+    } else if (input.contains("up")) {
+      moveCheck("up", game);
+    } else if (input.contains("down")) {
+      moveCheck("down", game);
     } else if (input.contains("take") && game.player.currentRoom.items.size()>0) {
       game.player.take(game.player.currentRoom.items.get(0));
       println("You picked up a: " + game.player.getLastItem());
@@ -66,5 +76,14 @@ class Command {
     } else {
       println("Command not recognized.");
     }
+  }
+  
+  void moveCheck(String direction, Game game) {
+    if (game.player.currentRoom.exits.containsKey(direction)) {
+      game.player.setLocation(game.player.currentRoom.exits.get(direction));
+      println("You moved " + direction + " to: " + game.player.currentRoom.description);
+    } else {
+      println("You can't go " + direction + " from here.");
+    }    
   }
 }

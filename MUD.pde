@@ -17,7 +17,6 @@ void draw() {
 void keyPressed() {
     if(key == ENTER) {
       getInput().inputText = true;
-      println(getInput().inputText);
     }
   if (key == ENTER) {
     getInput().inputText = true;

@@ -1,33 +1,15 @@
 // ChrisBruhn på GitHub (https://github.com/ChrisBruhn/MUD)
 class Game {
   Player player;
-  ArrayList<Room> rooms;
   Command command;
+  HashMap<String, Room> roomMap = new HashMap<String, Room>();
 
   Game() {
-    rooms = new ArrayList<Room>();
     player = new Player("Hero");
     command = new Command();
 
-    // Opret et eksempelrum
-    Room r1 = new Room("You are in a dark cave.");
-    Room r2 = new Room("You are in a sunny meadow.");
-    r1.addExit("north", r2);
-    r2.addExit("south", r1);
-
-    // Tilføj items og enemies
-    Item sword = new Item("Sword", "A sharp blade.", "Increase attack");
-    Item hammer = new Item("hammer", "Realy heavy.", "Decrease attack");
-    NPC goblin = new NPC("Goblin", 30, 5, 10);
-
-    r1.addItem(sword);
-    r2.addItem(hammer);
-    r1.addNPC(goblin);
-
-    rooms.add(r1);
-    rooms.add(r2);
-
-    player.setLocation(r1);
+    // Rum, NPCer og Items genereret af min goat ChatGPT
+    fileLoader("gameData.txt", this);
   }
 
   void start() {
@@ -47,5 +29,53 @@ class Game {
 
   void handleInput(String input) {
     command.parseInput(input, this);
+  }
+
+  void fileLoader(String filename, Game game) {
+    String[] lines = loadStrings(filename);
+
+    for (String line : lines) {
+      if (line.trim().isEmpty()) continue;
+
+      String[] parts = split(line, '|');
+      if (line.startsWith("ROOM:")) {
+        String id = parts[0].substring(5).trim();
+        String description = parts[1];
+        Room r = new Room(description);
+        roomMap.put(id, r);
+      } else if (line.startsWith("EXIT:")) {
+        String from = parts[0].substring(5).trim();
+        String direction = parts[1];
+        String to = parts[2];
+        Room rFrom = roomMap.get(from);
+        Room rTo = roomMap.get(to);
+        if (rFrom != null && rTo != null) {
+          rFrom.addExit(direction, rTo);
+        }
+      } else if (line.startsWith("ITEM:")) {
+        String id = parts[0].substring(5).trim();
+        String name = parts[1];
+        String description = parts[2];
+        String effect = parts[3];
+        String location = parts[4];
+        Item item = new Item(name, description, effect);
+        Room r = roomMap.get(location);
+        if (r != null) r.addItem(item);
+      } else if (line.startsWith("NPC:")) {
+        String id = parts[0].substring(4).trim();
+        String name = parts[1];
+        int health = int(parts[2]);
+        int strength = int(parts[3]);
+        int hostility = int(parts[4]);
+        String location = parts[5];
+        NPC npc = new NPC(name, health, strength, hostility);
+        Room r = roomMap.get(location);
+        if (r != null) r.addNPC(npc);
+      }
+    }
+
+    if (!game.roomMap.isEmpty()) {
+      game.player.setLocation(game.roomMap.get("r1"));
+    }
   }
 }

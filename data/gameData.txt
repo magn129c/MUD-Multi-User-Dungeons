@@ -1,0 +1,30 @@
+ROOM: r1|You are in a dark cave.
+ROOM: r2|You are in a sunny meadow.
+ROOM: r3|You are inside an old wooden tavern, the smell of ale fills the air.
+ROOM: r4|You are at the edge of a deep forest, tall trees surround you.
+ROOM: r5|You are standing on a stone bridge over a rushing river.
+ROOM: r6|You are in an abandoned watchtower, dust covers everything.
+
+EXIT: r1|north|r2
+EXIT: r2|south|r1
+EXIT: r2|east|r3
+EXIT: r3|west|r2
+EXIT: r2|north|r4
+EXIT: r4|south|r2
+EXIT: r4|east|r5
+EXIT: r5|west|r4
+EXIT: r5|up|r6
+EXIT: r6|down|r5
+
+ITEM: sword|Sword|A sharp blade.|Increase attack|r1
+ITEM: hammer|Hammer|Really heavy.|Decrease attack|r2
+ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health|r3
+ITEM: bow|Bow|A sturdy wooden bow.|Increase ranged attack|r4
+ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase defense|r6
+ITEM: coin|Gold Coin|A shiny coin with the king’s face.|No effect|r5
+
+NPC: goblin|Goblin|30|5|10|r1
+NPC: innkeeper|Innkeeper|50|2|0|r3
+NPC: wolf|Wolf|40|7|20|r4
+NPC: bandit|Bandit|60|10|30|r5
+NPC: ghost|Ghost|25|8|50|r6
