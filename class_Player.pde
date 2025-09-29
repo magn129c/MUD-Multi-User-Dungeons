@@ -2,6 +2,7 @@ class Player {
   
   String name = "";
   int health = 100;
+  int strength = 5;
   
   ArrayList<Item> inventory;
   Room currentRoom;
@@ -25,5 +26,6 @@ class Player {
   }
   
   void attack(NPC npc) {
+    npc.takeDamage(this.strength);  
   }
 }

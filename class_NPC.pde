@@ -13,8 +13,10 @@ class NPC {
   }
   
   void attack(Player player) {
+    player.health-=this.strength;
   }
-  
-  void takeDamage(int damage) {
+
+  void takeDamage(int dmg) {
+    this.health-=dmg;
   }
 }

@@ -33,21 +33,15 @@ class Game {
   void start() {
     println("Game started!");
     println(player.currentRoom.description);
-    
   }
 
   void gameloop() {
     // her kunne du opdatere input/output og game state
 
-    input.display(); // viser tekstbox på canvas
-
-
-
-
-    if (inputText) {
+    if (getInput().inputText) {
       handleInput(input.getText());
-      inputText=false;
-      input.reset();
+      getInput().inputText=false;
+      getInput().reset();
     }
   }
 
