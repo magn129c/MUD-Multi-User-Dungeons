@@ -11,6 +11,9 @@ void setup() {
 
 void draw() {
   game.gameloop();
+  if(game.player.health <= 0) {
+    exit();
+  }
 }
 
 

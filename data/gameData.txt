@@ -34,18 +34,16 @@ EXIT: r11|south|r10
 EXIT: r11|down|r12
 EXIT: r12|up|r11
 
-ITEM: sword|Sword|A sharp blade.|Increase attack|r1
-ITEM: hammer|Hammer|Really heavy.|Decrease attack|r2
-ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health|r3
-ITEM: bow|Bow|A sturdy wooden bow.|Increase ranged attack|r4
-ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase defense|r6
+ITEM: sword|Sword|A sharp blade.|Increase attack 5|r1
+ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health 30|r3
+ITEM: bow|Bow|A sturdy wooden bow.|Increase attack 15|r4
+ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase attack 5|r6
 ITEM: coin|Gold Coin|A shiny coin with the king’s face.|No effect|r5
 ITEM: scroll|Ancient Scroll|A brittle scroll written in a forgotten language.|Unlock secret|r7
 ITEM: lantern|Lantern|An old lantern that still works.|Light source|r8
-ITEM: shield|Iron Shield|A heavy shield with dents from battle.|Increase defense|r9
-ITEM: boots|Traveler’s Boots|Worn leather boots that feel very light.|Increase speed|r10
-ITEM: relic|Sacred Relic|A golden relic with mystical power.|Increase health|r11
-ITEM: crystal|Crystal Shard|A glowing shard humming with energy.|Increase magic|r12
+ITEM: shield|Iron Shield|A heavy shield with dents from battle.|Increase health 20|r9
+ITEM: relic|Sacred Relic|A golden relic with mystical power.|Increase health 30|r11
+ITEM: crystal|Crystal Shard|A glowing shard humming with energy.|Increase health 90|r12
 
 NPC: goblin|Goblin|30|5|10|r1
 NPC: innkeeper|Innkeeper|50|2|0|r3

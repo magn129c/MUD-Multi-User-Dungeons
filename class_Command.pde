@@ -28,6 +28,21 @@ class Command {
           println("Item: " + it.name + " - " + it.description);
         }
       }
+    } else if (input.contains("use")) {
+      String[] split = input.split(" ");
+      String[] split2 = split[1].split("");
+      int index = Integer.valueOf(split2[0]);
+
+      // Credit til min goat, ChatGPT
+      if (index >= 0 && index < game.player.inventory.size()) {
+        Item item = game.player.inventory.get(index);
+        if (item != null) {
+          item.use();
+          println("You used an item: " + item.name + " and got: " + item.ability);
+        }
+      } else {
+        println("Item doesn't exist");
+      }
     } else if (input.contains("exits")) {
       if (game.player.currentRoom.exits.size() > 0) {
         println("Exits:");
@@ -52,7 +67,7 @@ class Command {
       moveCheck("down", game);
     } else if (input.contains("take") && game.player.currentRoom.items.size()>0) {
       game.player.take(game.player.currentRoom.items.get(0));
-      println("You picked up a: " + game.player.getLastItem());
+      println("You picked up a: " + game.player.getLastItem().name);
     } else if (input.contains("stats")) {
       println(game.player.health + " HP");
       println(game.player.strength + " ATK");
@@ -69,6 +84,9 @@ class Command {
           npc.attack(game.player);
           println("Enemy: " + npc.name + " - " + npc.health + " HP");
           println("Player: " + game.player.name + " - " + game.player.health + " HP");
+          if(npc.health <= 0) {
+            game.player.currentRoom.NPCs.remove(index);
+          }
         }
       } else {
         println("enemy doesn't exist");
@@ -77,13 +95,13 @@ class Command {
       println("Command not recognized.");
     }
   }
-  
+
   void moveCheck(String direction, Game game) {
     if (game.player.currentRoom.exits.containsKey(direction)) {
       game.player.setLocation(game.player.currentRoom.exits.get(direction));
       println("You moved " + direction + " to: " + game.player.currentRoom.description);
     } else {
       println("You can't go " + direction + " from here.");
-    }    
+    }
   }
 }
