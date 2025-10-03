@@ -1,16 +1,16 @@
 ROOM: r1|You are in a dark cave.
 ROOM: r2|You are in a sunny meadow.
-ROOM: r3|You are at the edge of a deep forest, tall trees surround you.
-ROOM: r4|You are standing on a stone bridge over a rushing river.
-ROOM: r5|You are in an abandoned watchtower, dust covers everything.
-ROOM: r6|You are in a dusty library, shelves filled with ancient books.
-ROOM: r7|You are in a quiet graveyard, the air feels heavy.
-ROOM: r8|You are in a dark tunnel.
-ROOM: r9|You are in a dark tunnel.
-ROOM: r10|You are inside a blacksmith’s forge, the heat is intense.
-ROOM: r11|You are on a narrow mountain path, the wind howls around you.
-ROOM: r12|You are in a ruined temple, moss covers the broken statues.
-ROOM: r13|You are in a crystal cave, glowing crystals light up the walls.
+ROOM: r3|You are on the edge of a shadowy forest, faint whispers echo from within.
+ROOM: r4|You are on a moss-covered stone bridge spanning a deep gorge.
+ROOM: r5|You are inside a crumbling watchtower, its stairs half-broken and unsafe.
+ROOM: r6|You are in an abandoned library, cobwebs cling to ancient shelves.
+ROOM: r7|You are in a forgotten graveyard, crooked tombstones jut from the ground.
+ROOM: r8|You are in a damp underground catacomb, the air smells of rot.
+ROOM: r9|You are in a cavernous forge, glowing embers faintly illuminate old tools.
+ROOM: r10|You are on a windswept mountain ledge, clouds swirl dangerously below.
+ROOM: r11|You are inside the ruins of a temple, broken pillars lean precariously.
+ROOM: r12|You are in a crystal cavern, multicolored shards glow from the walls.
+ROOM: r13|You are in a hidden sanctum, strange runes pulse faintly on the stone floor.
 
 EXIT: r1|north|r2
 EXIT: r2|south|r1
@@ -40,22 +40,24 @@ EXIT: r13|up|r12
 ITEM: sword|Sword|A sharp blade.|Increase attack 5|r1
 ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health 30|r3
 ITEM: bow|Bow|A sturdy wooden bow.|Increase attack 15|r4
-ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase attack 5|r6
 ITEM: coin|Gold Coin|A shiny coin with the king’s face.|No effect|r5
+ITEM: amulet|Amulet|An ancient amulet with strange markings.|Increase attack 5|r6
 ITEM: scroll|Ancient Scroll|A brittle scroll written in a forgotten language.|Unlock secret|r7
 ITEM: lantern|Lantern|An old lantern that still works.|Light source|r8
 ITEM: shield|Iron Shield|A heavy shield with dents from battle.|Increase health 20|r9
 ITEM: relic|Sacred Relic|A golden relic with mystical power.|Increase health 30|r11
 ITEM: crystal|Crystal Shard|A glowing shard humming with energy.|Increase health 90|r12
 
-NPC: goblin|Goblin|30|5|10|r1
-NPC: innkeeper|Innkeeper|50|2|0|r3
-NPC: wolf|Wolf|40|7|20|r4
-NPC: bandit|Bandit|60|10|30|r5
-NPC: ghost|Ghost|25|8|50|r6
-NPC: librarian|Ghostly Librarian|20|3|15|r7
-NPC: skeleton|Skeleton|35|6|25|r8
-NPC: blacksmith|Blacksmith|70|8|0|r9
-NPC: eagle|Giant Eagle|50|12|35|r10
-NPC: cultist|Dark Cultist|55|9|40|r11
-NPC: crystalbeast|Crystal Beast|80|14|60|r12
+NPC: goblin|Goblin|30|5|8|r1
+NPC: innkeeper|Innkeeper|45|2|1|r3
+NPC: wolf|Forest Wolf|35|7|7|r3
+NPC: troll|Bridge Troll|70|10|9|r4
+NPC: bandit|Bandit Raider|55|9|8|r5
+NPC: ghost|Wailing Spirit|25|6|6|r6
+NPC: librarian|Ghostly Librarian|20|3|2|r6
+NPC: skeleton|Restless Skeleton|40|6|7|r8
+NPC: blacksmith|Cursed Blacksmith|65|8|5|r9
+NPC: eagle|Storm Eagle|50|12|7|r10
+NPC: cultist|Dark Cultist|60|9|9|r11
+NPC: crystalbeast|Crystal Beast|80|14|10|r12
+NPC: highpriest|Forgotten High Priest|100|15|10|r13
