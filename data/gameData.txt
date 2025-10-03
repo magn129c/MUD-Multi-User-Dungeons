@@ -1,38 +1,41 @@
 ROOM: r1|You are in a dark cave.
 ROOM: r2|You are in a sunny meadow.
-ROOM: r3|You are inside an old wooden tavern, the smell of ale fills the air.
-ROOM: r4|You are at the edge of a deep forest, tall trees surround you.
-ROOM: r5|You are standing on a stone bridge over a rushing river.
-ROOM: r6|You are in an abandoned watchtower, dust covers everything.
-ROOM: r7|You are in a dusty library, shelves filled with ancient books.
-ROOM: r8|You are in a quiet graveyard, the air feels heavy.
-ROOM: r9|You are inside a blacksmith’s forge, the heat is intense.
-ROOM: r10|You are on a narrow mountain path, the wind howls around you.
-ROOM: r11|You are in a ruined temple, moss covers the broken statues.
-ROOM: r12|You are in a crystal cave, glowing crystals light up the walls.
+ROOM: r3|You are at the edge of a deep forest, tall trees surround you.
+ROOM: r4|You are standing on a stone bridge over a rushing river.
+ROOM: r5|You are in an abandoned watchtower, dust covers everything.
+ROOM: r6|You are in a dusty library, shelves filled with ancient books.
+ROOM: r7|You are in a quiet graveyard, the air feels heavy.
+ROOM: r8|You are in a dark tunnel.
+ROOM: r9|You are in a dark tunnel.
+ROOM: r10|You are inside a blacksmith’s forge, the heat is intense.
+ROOM: r11|You are on a narrow mountain path, the wind howls around you.
+ROOM: r12|You are in a ruined temple, moss covers the broken statues.
+ROOM: r13|You are in a crystal cave, glowing crystals light up the walls.
 
 EXIT: r1|north|r2
 EXIT: r2|south|r1
-EXIT: r2|east|r3
-EXIT: r3|west|r2
-EXIT: r2|north|r4
-EXIT: r4|south|r2
-EXIT: r4|east|r5
-EXIT: r5|west|r4
+EXIT: r2|north|r3
+EXIT: r3|south|r2
+EXIT: r3|east|r4
+EXIT: r4|west|r3
+EXIT: r4|up|r5
+EXIT: r5|down|r4
 EXIT: r5|up|r6
 EXIT: r6|down|r5
-EXIT: r6|up|r7
-EXIT: r7|down|r6
-EXIT: r7|east|r8
-EXIT: r8|west|r7
-EXIT: r9|east|r2
-EXIT: r2|west|r9
-EXIT: r9|west|r10
-EXIT: r10|east|r9
-EXIT: r10|north|r11
-EXIT: r11|south|r10
-EXIT: r11|down|r12
-EXIT: r12|up|r11
+EXIT: r6|east|r7
+EXIT: r7|west|r6
+EXIT: r7|down|r8
+EXIT: r8|up|r7
+EXIT: r8|west|r9
+EXIT: r9|east|r8
+EXIT: r9|up|r10
+EXIT: r10|down|r9
+EXIT: r10|west|r11
+EXIT: r11|east|r10
+EXIT: r11|north|r12
+EXIT: r12|south|r11
+EXIT: r12|down|r13
+EXIT: r13|up|r12
 
 ITEM: sword|Sword|A sharp blade.|Increase attack 5|r1
 ITEM: ale|Mug of Ale|A frothy mug of strong ale.|Restore health 30|r3
