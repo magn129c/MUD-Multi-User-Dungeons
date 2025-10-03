@@ -26,7 +26,7 @@ EXIT: r7|down|r6
 EXIT: r7|east|r8
 EXIT: r8|west|r7
 EXIT: r9|south|r2
-EXIT: r2|northwest|r9
+EXIT: r2|north|r9
 EXIT: r10|east|r11
 EXIT: r11|west|r10
 EXIT: r11|down|r12
